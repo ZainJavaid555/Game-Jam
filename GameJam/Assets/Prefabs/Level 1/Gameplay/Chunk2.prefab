@@ -479,6 +479,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9124773806106058710}
     m_Modifications:
+    - target: {fileID: 1182682657417683912, guid: 17c7bd21be8fd19448236bda30c18f50, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680846103767172332, guid: 17c7bd21be8fd19448236bda30c18f50, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7453310470175420967, guid: 17c7bd21be8fd19448236bda30c18f50, type: 3}
       propertyPath: m_Name
       value: Blocker
