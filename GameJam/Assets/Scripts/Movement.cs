@@ -26,10 +26,10 @@ public class Movement : MonoBehaviour
         {
             if (transform.position.x >= 0)
             {
-                transform.position = new Vector3(2, transform.position.y, transform.position.z);
+                transform.position = new Vector3(1.5f, transform.position.y, transform.position.z);
             }
 
-            if (transform.position.x == -2)
+            if (transform.position.x == -1.5)
             {
                 transform.position = new Vector3(0, transform.position.y, transform.position.z);
             }
@@ -40,10 +40,10 @@ public class Movement : MonoBehaviour
         {
             if (transform.position.x == 0)
             {
-                transform.position = new Vector3(-2, transform.position.y, transform.position.z);
+                transform.position = new Vector3(-1.5f, transform.position.y, transform.position.z);
             }
 
-            if (transform.position.x == 2)
+            if (transform.position.x == 1.5f)
             {
                 transform.position = new Vector3(0, transform.position.y, transform.position.z);
             }
