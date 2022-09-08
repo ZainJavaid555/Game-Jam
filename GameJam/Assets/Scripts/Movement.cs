@@ -9,14 +9,18 @@ public class Movement : MonoBehaviour
     public float turnSpeed = 3.0f;
     public bool isGround;
     public bool jump = false;
+    
+    public bool slide;
 
     private Animator playerAnim;
     private Rigidbody playerRb;
+    private BoxCollider trigger;
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
+        trigger = GetComponent<BoxCollider>();
 
         transform.position = new Vector3(0, 0, 0);
     }
@@ -75,12 +79,19 @@ public class Movement : MonoBehaviour
             playerAnim.SetBool("jump", true);
         }
 
+
+
+        //Code for Slide
+        Roll();
+
+
+
     }
 
     private void LateUpdate()
     {
 
-        
+
 
 
 
@@ -94,22 +105,56 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             isGround = true;
             Debug.Log("On Ground");
             jump = false;
         }
-        
+
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             isGround = false;
             Debug.Log("NOT Ground");
             jump = true;
         }
     }
+
+    public void Roll()
+    {
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            playerAnim.SetBool("roll", true);
+            slide = true;
+
+            //Debug.Log("Side");
+
+
+            //trigger.isTrigger = true;
+
+            //
+        }
+        else
+        {
+            playerAnim.SetBool("roll", false);
+            slide = false;
+
+            //trigger.isTrigger = false;
+        }
+
+    }
+
+
+
+
+
+
+
+    
+
+
 }
