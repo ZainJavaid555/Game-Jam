@@ -17,6 +17,8 @@ public class Movement : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
+
+        transform.position = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
@@ -53,6 +55,7 @@ public class Movement : MonoBehaviour
 
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
+
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
         {
             playerRb.AddForce(Vector3.up * force, ForceMode.Impulse);
@@ -74,9 +77,8 @@ public class Movement : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
-        
 
         
 
@@ -85,7 +87,8 @@ public class Movement : MonoBehaviour
 
 
 
-        
+
+
 
     }
 
