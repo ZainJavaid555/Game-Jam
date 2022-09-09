@@ -9,16 +9,24 @@ public class Movement : MonoBehaviour
     public float turnSpeed = 3.0f;
     public float downForce = 2.0f;
     public bool isGround;
+    public bool isPlatform;
     public bool jump = false;
     public bool hit = false;
+    public bool stand = true;
+    public bool under = false;
 
-    
+    GameObject standCollider;
+    GameObject rollCollider;
+
+
     public bool slide;
 
     private Animator playerAnim;
     private Rigidbody playerRb;
     private BoxCollider trigger;
+
     // Start is called before the first frame update
+    [System.Obsolete]
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -27,7 +35,10 @@ public class Movement : MonoBehaviour
 
         transform.position = new Vector3(0, 0, 0);
 
-        
+        standCollider = transform.FindChild("Standing Collider").gameObject;
+        rollCollider = transform.FindChild("Roll Collider").gameObject;
+        rollCollider.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -69,6 +80,7 @@ public class Movement : MonoBehaviour
         {
             playerRb.AddForce(Vector3.up * force, ForceMode.Impulse);
             isGround = false;
+            isPlatform = false;
             
         }
         
@@ -122,7 +134,7 @@ public class Movement : MonoBehaviour
 
         if (collision.gameObject.tag == "Platform")
         {
-            isGround = true;
+            isPlatform = true;
             Debug.Log("On Platform");
             jump = false;
         }
@@ -147,12 +159,21 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground" && collision.gameObject.tag == "Platform")
+        if (collision.gameObject.tag == "Ground")
         {
             isGround = false;
             Debug.Log("NOT Ground");
+            jump = true;
+        }
+
+        if (collision.gameObject.tag == "Platform")
+        {
+            isPlatform = false;
+            Debug.Log("NOT Ground");
+            jump = true;
         }
     }
+
 
     public void Roll()
     {
@@ -160,13 +181,27 @@ public class Movement : MonoBehaviour
         {
             playerAnim.SetBool("roll", true);
             slide = true;
-
             playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
+            standCollider.SetActive(false);
+            rollCollider.SetActive(true);
+            if (rollCollider.activeSelf == true)
+            {
+                under = true;
+                stand = false;
+            }
         }
         else
         {
             playerAnim.SetBool("roll", false);
             slide = false;
+            standCollider.SetActive(true);
+            rollCollider.SetActive(false);
+            stand = true;
+            if (standCollider.activeSelf == true)
+            {
+                stand = true;
+                under = false;
+            }
 
             //trigger.isTrigger = false;
         }
