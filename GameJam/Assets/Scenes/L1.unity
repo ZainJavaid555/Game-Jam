@@ -2700,6 +2700,7 @@ MonoBehaviour:
   speed: 3
   force: 2
   turnSpeed: 2
+  downForce: 2
   isGround: 1
   jump: 0
   slide: 0
@@ -3672,6 +3673,7 @@ MonoBehaviour:
   speed: 6
   force: 5
   turnSpeed: 3
+  downForce: 2
   isGround: 1
   jump: 0
   slide: 0

@@ -10,6 +10,8 @@ public class Movement : MonoBehaviour
     public float downForce = 2.0f;
     public bool isGround;
     public bool jump = false;
+    public bool hit = false;
+
     
     public bool slide;
 
@@ -113,10 +115,24 @@ public class Movement : MonoBehaviour
             isGround = true;
             Debug.Log("On Ground");
             jump = false;
-
-
         }
 
+
+        //Code for Hitting Rock
+        if(collision.gameObject.tag == "Rock")
+        {
+            playerAnim.SetBool("hit", true);
+            Debug.Log("Hit on Rock");
+            hit = true;
+        }
+
+        //Code for hitting Blocker
+        if (collision.gameObject.tag == "Blocker")
+        {
+            playerAnim.SetBool("blocker", true);
+            Debug.Log("Hit on Blocker");
+            hit = true;
+        }
     }
 
     private void OnCollisionExit(Collision collision)
