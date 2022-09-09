@@ -2703,6 +2703,7 @@ MonoBehaviour:
   downForce: 2
   isGround: 1
   jump: 0
+  hit: 0
   slide: 0
 --- !u!95 &427452241
 Animator:
@@ -3676,6 +3677,7 @@ MonoBehaviour:
   downForce: 2
   isGround: 1
   jump: 0
+  hit: 0
   slide: 0
 --- !u!4 &579132090 stripped
 Transform:
@@ -9745,6 +9747,7 @@ GameObject:
   - component: {fileID: 1786744514}
   - component: {fileID: 1786744513}
   - component: {fileID: 1786744512}
+  - component: {fileID: 1786744515}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9818,6 +9821,20 @@ Transform:
   m_Father: {fileID: 579132090}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 12.04, y: 0, z: 0}
+--- !u!114 &1786744515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786744511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c710ae68baa70704588a0ff67ccd6940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 579132086}
+  countDown: 0
 --- !u!1001 &1801448348
 PrefabInstance:
   m_ObjectHideFlags: 0
