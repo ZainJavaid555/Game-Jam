@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour
         trigger = GetComponent<BoxCollider>();
 
         transform.position = new Vector3(0, 0, 0);
+        
     }
 
     // Update is called once per frame
@@ -66,6 +67,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
         {
             playerRb.AddForce(Vector3.up * force, ForceMode.Impulse);
+            isGround = false;
             
         }
         
