@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public float speed = 5.0f;
     public float force = 3.0f;
     public float turnSpeed = 3.0f;
+    public float downForce = 2.0f;
     public bool isGround;
     public bool jump = false;
     
@@ -63,21 +64,23 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
         {
             playerRb.AddForce(Vector3.up * force, ForceMode.Impulse);
+            
         }
+        
 
 
         //playes walking animation
-        if (jump == false)
+       /* if (jump == false)
         {
             playerAnim.SetBool("jump", false);
-        }
+        }*/
 
 
         //plays jump annimation
-        if (jump == true)
+        /*if (jump == true)
         {
             playerAnim.SetBool("jump", true);
-        }
+        }*/
 
 
 
@@ -110,6 +113,8 @@ public class Movement : MonoBehaviour
             isGround = true;
             Debug.Log("On Ground");
             jump = false;
+
+
         }
 
     }
@@ -131,12 +136,7 @@ public class Movement : MonoBehaviour
             playerAnim.SetBool("roll", true);
             slide = true;
 
-            //Debug.Log("Side");
-
-
-            //trigger.isTrigger = true;
-
-            //
+            playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
         }
         else
         {
