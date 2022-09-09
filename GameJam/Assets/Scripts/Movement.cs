@@ -149,7 +149,7 @@ public class Movement : MonoBehaviour
 
     public void Roll()
     {
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow) && isGround)
         {
             playerAnim.SetBool("roll", true);
             slide = true;
