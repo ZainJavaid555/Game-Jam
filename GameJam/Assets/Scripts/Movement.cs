@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour
         trigger = GetComponent<BoxCollider>();
 
         transform.position = new Vector3(0, 0, 0);
+
         
     }
 
@@ -119,6 +120,13 @@ public class Movement : MonoBehaviour
             jump = false;
         }
 
+        if (collision.gameObject.tag == "Platform")
+        {
+            isGround = true;
+            Debug.Log("On Platform");
+            jump = false;
+        }
+
 
         //Code for Hitting Rock
         if(collision.gameObject.tag == "Rock")
@@ -139,11 +147,10 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" && collision.gameObject.tag == "Platform")
         {
             isGround = false;
             Debug.Log("NOT Ground");
-            jump = true;
         }
     }
 
