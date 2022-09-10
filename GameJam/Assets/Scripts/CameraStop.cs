@@ -30,12 +30,12 @@ public class CameraStop : MonoBehaviour
 
     private IEnumerator StartCounter()
     {
-        countDown = 1.0f;
+        countDown = 2.0f;
         for (int i = 0; i < 10000; i++)
         {
             while (countDown >= 0)
             {
-                Debug.Log(i++);
+                //Debug.Log(i++);
                 countDown -= Time.smoothDeltaTime;
                 yield return null;
             }

@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
 
     private Animator playerAnim;
     private Rigidbody playerRb;
-    private BoxCollider trigger;
+    
 
     // Start is called before the first frame update
     [System.Obsolete]
@@ -39,13 +39,11 @@ public class Movement : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
-        trigger = GetComponent<BoxCollider>();
+        
 
         transform.position = new Vector3(0, 0, 0);
 
-        standCollider = transform.FindChild("Standing Collider").gameObject;
-        rollCollider = transform.FindChild("Roll Collider").gameObject;
-        rollCollider.SetActive(false);
+        
 
     }
 
@@ -61,11 +59,50 @@ public class Movement : MonoBehaviour
 
         if(fingerDown)
         {
-            if(Input.touches[0].position.y >= startPos.y + pixelDistToDetect)
+
+            //Up Swipe: Works fine. No need to change
+            if (Input.touches[0].position.y >= startPos.y + pixelDistToDetect)
             {
                 fingerDown = false;
                 Debug.Log("Swipe Up");
+
+                playerRb.AddForce(Vector3.up * force, ForceMode.Impulse);
+                isGround = false;
+                isPlatform = false;
+                jump = true;
+
+                playerAnim.SetBool("jump", true);
+
             }
+            /*else if(jump == false)
+            {
+                playerAnim.SetBool("jump", false);
+            }*/
+
+            //DOOWWNNN
+            /*if (Input.touches[0].position.y <= startPos.y + pixelDistToDetect)
+            {
+                fingerDown = false;
+                Debug.Log("Down");
+
+                playerAnim.SetBool("roll", true);
+                slide = true;
+                playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
+
+
+            }
+            else if (jump == false)
+            {
+                playerAnim.SetBool("roll", false);
+            }*/
+
+
+
+
+
+
+            //Left Swipe: Works fine. No need to change
+
             else if(Input.touches[0].position.x <= startPos.x - pixelDistToDetect)
             {
                 fingerDown = false;
@@ -81,7 +118,10 @@ public class Movement : MonoBehaviour
                     transform.position = new Vector3(0, transform.position.y, transform.position.z);
                 }
             }
-            else if(Input.touches[0].position.x >= startPos.x +pixelDistToDetect)
+
+
+            //Right Swipe: Works fine. No need to change
+            else if (Input.touches[0].position.x >= startPos.x +pixelDistToDetect)
             {
                 fingerDown = false;
                 Debug.Log("Swipe Right");
@@ -96,6 +136,17 @@ public class Movement : MonoBehaviour
                     transform.position = new Vector3(0, transform.position.y, transform.position.z);
                 }
             }
+
+            //Down Swipe, Need testing
+            else if (Input.touches[0].position.y >= startPos.y +pixelDistToDetect)
+            {
+                fingerDown = false;
+                Debug.Log("Swipe Down");
+
+                playerAnim.SetBool("roll", true);
+                slide = true;
+                playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
+            }
             
         }
 
@@ -103,57 +154,46 @@ public class Movement : MonoBehaviour
         {
             fingerDown = false;
         }
+        
+
+
+
 
         //----------------------
 
-       /* if (Input.GetKeyDown(KeyCode.RightArrow))
+
+
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGround || Input.GetKeyDown(KeyCode.UpArrow) && isPlatform)
         {
-            if (transform.position.x >= 0)
-            {
-                transform.position = new Vector3(1.5f, transform.position.y, transform.position.z);
-            }
-
-            if (transform.position.x == -1.5)
-            {
-                transform.position = new Vector3(0, transform.position.y, transform.position.z);
-            }
-
+            playerRb.AddForce(Vector3.up * force, ForceMode.Impulse);
+            isGround = false;
+            isPlatform = false;
+            jump = true;
         }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            if (transform.position.x == 0)
-            {
-                transform.position = new Vector3(-1.5f, transform.position.y, transform.position.z);
-            }
-
-            if (transform.position.x == 1.5f)
-            {
-                transform.position = new Vector3(0, transform.position.y, transform.position.z);
-            }
-        }*/
-
 
 
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
+        //Player Editor Movement
+        EditorPlayerMovement();
 
-       
+
 
 
 
         //playes walking animation
-        /* if (jump == false)
-         {
-             playerAnim.SetBool("jump", false);
-         }*/
+        if (jump == false)
+        {
+            playerAnim.SetBool("jump", false);
+        }
 
 
         //plays jump annimation
-        /*if (jump == true)
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             playerAnim.SetBool("jump", true);
-        }*/
+        }
 
 
 
@@ -166,22 +206,15 @@ public class Movement : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGround || Input.GetKeyDown(KeyCode.UpArrow) && isPlatform)
-        {
-            playerRb.AddForce(Vector3.up * force, ForceMode.Impulse);
-            isGround = false;
-            isPlatform = false;
 
-        }
-    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
             isGround = true;
+            isPlatform = false;
             Debug.Log("On Ground");
             jump = false;
         }
@@ -189,6 +222,7 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.tag == "Platform")
         {
             isPlatform = true;
+            isGround = false;
             Debug.Log("On Platform");
             jump = false;
         }
@@ -213,56 +247,65 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Platform")
         {
             isGround = false;
-            Debug.Log("NOT Ground");
+            isPlatform = false;
+            Debug.Log("NOT Ground and Platform");
             jump = true;
         }
 
-        if (collision.gameObject.tag == "Platform")
-        {
-            isPlatform = false;
-            Debug.Log("NOT Ground");
-            jump = true;
-        }
     }
 
 
     public void Roll()
     {
-        if (Input.GetKey(KeyCode.DownArrow) && isGround)
+        if (Input.GetKey(KeyCode.DownArrow) && isGround && !jump)
         {
             
             playerAnim.SetBool("roll", true);
             slide = true;
             playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
-            standCollider.SetActive(false);
-            rollCollider.SetActive(true);
-            if (rollCollider.activeSelf == true)
-            {
-                
-                under = true;
-                stand = false;
-
-                
-            }
+           
             
         }
         else
         {
             playerAnim.SetBool("roll", false);
             slide = false;
-            standCollider.SetActive(true);
-            rollCollider.SetActive(false);
-            stand = true;
-            if (standCollider.activeSelf == true)
-            {
-                stand = true;
-                under = false;
-            }
+            
         }
 
+    }
+
+    public void EditorPlayerMovement()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (transform.position.x >= 0)
+            {
+                transform.position = new Vector3(1.5f, transform.position.y, transform.position.z);
+            }
+
+            if (transform.position.x == -1.5)
+            {
+                transform.position = new Vector3(0, transform.position.y, transform.position.z);
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (transform.position.x == 0)
+            {
+                transform.position = new Vector3(-1.5f, transform.position.y, transform.position.z);
+            }
+
+            if (transform.position.x == 1.5f)
+            {
+                transform.position = new Vector3(0, transform.position.y, transform.position.z);
+            }
+        }
     }
 
  
