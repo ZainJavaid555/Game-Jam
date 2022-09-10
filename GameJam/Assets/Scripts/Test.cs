@@ -20,7 +20,7 @@ public class Test : MonoBehaviour
         //hurdle = GetComponent<BoxCollider>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(ms.slide == true)
         {
@@ -38,7 +38,7 @@ public class Test : MonoBehaviour
 
     private IEnumerator StartCounter()
     {
-        countDown = 5.0f;
+        countDown = 10.0f;
         for (int i = 0; i < 10000; i++)
         {
             while (countDown >= 0)

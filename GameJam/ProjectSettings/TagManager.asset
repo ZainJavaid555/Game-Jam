@@ -8,6 +8,7 @@ TagManager:
   - Rock
   - Blocker
   - Platform
+  - Feather
   layers:
   - Default
   - TransparentFX
