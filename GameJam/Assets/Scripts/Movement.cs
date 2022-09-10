@@ -136,6 +136,17 @@ public class Movement : MonoBehaviour
                     transform.position = new Vector3(0, transform.position.y, transform.position.z);
                 }
             }
+
+            //Down Swipe, Need testing
+            else if (Input.touches[0].position.y >= startPos.y +pixelDistToDetect)
+            {
+                fingerDown = false;
+                Debug.Log("Swipe Down");
+
+                playerAnim.SetBool("roll", true);
+                slide = true;
+                playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
+            }
             
         }
 
