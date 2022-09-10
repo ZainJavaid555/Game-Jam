@@ -15,6 +15,14 @@ public class Movement : MonoBehaviour
     public bool stand = true;
     public bool under = false;
 
+    //Mobile Touch Controller Varriables
+
+    private Vector3 startPos;
+    public int pixelDistToDetect = 50;
+    private bool fingerDown;
+
+    //---------------------------------------
+
     GameObject standCollider;
     GameObject rollCollider;
 
@@ -44,7 +52,61 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        //Mobile Touch Controller
+        if(fingerDown == false && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        {
+            startPos = Input.touches[0].position;
+            fingerDown = true;
+        }
+
+        if(fingerDown)
+        {
+            if(Input.touches[0].position.y >= startPos.y + pixelDistToDetect)
+            {
+                fingerDown = false;
+                Debug.Log("Swipe Up");
+            }
+            else if(Input.touches[0].position.x <= startPos.x - pixelDistToDetect)
+            {
+                fingerDown = false;
+                Debug.Log("swipe Left");
+
+                if (transform.position.x == 0)
+                {
+                    transform.position = new Vector3(-1.5f, transform.position.y, transform.position.z);
+                }
+
+                if (transform.position.x == 1.5f)
+                {
+                    transform.position = new Vector3(0, transform.position.y, transform.position.z);
+                }
+            }
+            else if(Input.touches[0].position.x >= startPos.x +pixelDistToDetect)
+            {
+                fingerDown = false;
+                Debug.Log("Swipe Right");
+
+                if (transform.position.x >= 0)
+                {
+                    transform.position = new Vector3(1.5f, transform.position.y, transform.position.z);
+                }
+
+                if (transform.position.x == -1.5)
+                {
+                    transform.position = new Vector3(0, transform.position.y, transform.position.z);
+                }
+            }
+            
+        }
+
+        if(fingerDown && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended)
+        {
+            fingerDown = false;
+        }
+
+        //----------------------
+
+       /* if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (transform.position.x >= 0)
             {
@@ -69,28 +131,22 @@ public class Movement : MonoBehaviour
             {
                 transform.position = new Vector3(0, transform.position.y, transform.position.z);
             }
-        }
+        }*/
 
 
 
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
-        {
-            playerRb.AddForce(Vector3.up * force, ForceMode.Impulse);
-            isGround = false;
-            isPlatform = false;
-            
-        }
-        
+       
+
 
 
         //playes walking animation
-       /* if (jump == false)
-        {
-            playerAnim.SetBool("jump", false);
-        }*/
+        /* if (jump == false)
+         {
+             playerAnim.SetBool("jump", false);
+         }*/
 
 
         //plays jump annimation
@@ -103,24 +159,22 @@ public class Movement : MonoBehaviour
 
         //Code for Slide
         Roll();
-
+        
+        
+        
 
 
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGround || Input.GetKeyDown(KeyCode.UpArrow) && isPlatform)
+        {
+            playerRb.AddForce(Vector3.up * force, ForceMode.Impulse);
+            isGround = false;
+            isPlatform = false;
 
-
-
-
-
-
-
-
-
-
-
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -141,7 +195,7 @@ public class Movement : MonoBehaviour
 
 
         //Code for Hitting Rock
-        if(collision.gameObject.tag == "Rock")
+        if (collision.gameObject.tag == "Rock")
         {
             playerAnim.SetBool("hit", true);
             Debug.Log("Hit on Rock");
@@ -179,6 +233,7 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.DownArrow) && isGround)
         {
+            
             playerAnim.SetBool("roll", true);
             slide = true;
             playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
@@ -186,9 +241,13 @@ public class Movement : MonoBehaviour
             rollCollider.SetActive(true);
             if (rollCollider.activeSelf == true)
             {
+                
                 under = true;
                 stand = false;
+
+                
             }
+            
         }
         else
         {
@@ -202,19 +261,10 @@ public class Movement : MonoBehaviour
                 stand = true;
                 under = false;
             }
-
-            //trigger.isTrigger = false;
         }
 
     }
 
-
-
-
-
-
-
-    
-
+ 
 
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.887905, g: 0.9025782, b: 0.9528169, a: 1}
+  m_IndirectSpecularColor: {r: 0.8892496, g: 0.90340394, b: 0.95343953, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2752,6 +2752,7 @@ MonoBehaviour:
   hit: 0
   stand: 1
   under: 0
+  pixelDistToDetect: 20
   slide: 0
 --- !u!95 &427452241
 Animator:
@@ -3716,6 +3717,7 @@ MonoBehaviour:
   hit: 0
   stand: 1
   under: 0
+  pixelDistToDetect: 50
   slide: 0
 --- !u!4 &579132090 stripped
 Transform:
@@ -7051,8 +7053,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7675942, y: 0.9700686, z: 1.9401388}
-  m_Center: {x: 0.016990721, y: -0.09614408, z: 0.22027314}
+  m_Size: {x: 0.7675942, y: 0.67427343, z: 0.51825875}
+  m_Center: {x: 0.016990721, y: -0.24404165, z: 0.10037258}
 --- !u!1001 &1301948207
 PrefabInstance:
   m_ObjectHideFlags: 0
