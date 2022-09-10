@@ -19,6 +19,7 @@ public class Pickup : MonoBehaviour
         if(Col.gameObject.tag == "Feather")
         {
             GetComponent<Points>().points++; // Add 1 Point
+            //Decrease speed of thief by 0.03 for each feather.
             Col.gameObject.SetActive(false);
         }
     }
