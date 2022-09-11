@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraStop : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class CameraStop : MonoBehaviour
     public GameObject Player;
 
     public float countDown;
+
+
+    //For Gameplay Stop/Pause Screen
+    public GameObject StopScreen;
 
 
     private void Awake()
@@ -28,6 +33,22 @@ public class CameraStop : MonoBehaviour
     }
 
 
+    public void ReplayButton()
+    {
+        SceneManager.LoadScene("L1");
+        Time.timeScale = 1;
+    }
+
+    public void HomeButton()
+    {
+        SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
+    }
+
+
+
+
+    //For Delay
     private IEnumerator StartCounter()
     {
         countDown = 2.0f;
@@ -40,6 +61,7 @@ public class CameraStop : MonoBehaviour
                 yield return null;
             }
             Time.timeScale = 0;
+            StopScreen.SetActive(true);
         }
 
     }
