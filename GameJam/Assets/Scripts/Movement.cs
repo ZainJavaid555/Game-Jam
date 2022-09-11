@@ -260,7 +260,7 @@ public class Movement : MonoBehaviour
 
     public void Roll()
     {
-        if (Input.GetKey(KeyCode.DownArrow) && isGround && !jump)
+        if (Input.GetKey(KeyCode.DownArrow)) //&& isGround && !jump)
         {
             
             playerAnim.SetBool("roll", true);
