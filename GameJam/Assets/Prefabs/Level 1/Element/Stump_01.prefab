@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 1097983977664614667}
   - component: {fileID: 1097983977667514667}
   - component: {fileID: 1097983977666384875}
+  - component: {fileID: 415936463606264094}
   m_Layer: 0
   m_Name: Stump_01
   m_TagString: Platform
@@ -130,6 +131,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &415936463606264094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097983977664449835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb4d714f5fd8fa4589edc9cca821ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitCollider: {fileID: 0}
+  safeCollider: {fileID: 0}
 --- !u!1 &1596833572001609548
 GameObject:
   m_ObjectHideFlags: 0

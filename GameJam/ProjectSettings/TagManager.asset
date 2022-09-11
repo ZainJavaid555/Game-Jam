@@ -9,6 +9,7 @@ TagManager:
   - Blocker
   - Platform
   - Feather
+  - Thief
   layers:
   - Default
   - TransparentFX
