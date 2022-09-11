@@ -138,7 +138,7 @@ public class Movement : MonoBehaviour
             }
 
             //Down Swipe, Need testing
-            else if (Input.touches[0].position.y >= startPos.y +pixelDistToDetect)
+            else if (Input.touches[0].position.y <= startPos.y +pixelDistToDetect)
             {
                 fingerDown = false;
                 Debug.Log("Swipe Down");
