@@ -121,7 +121,7 @@ public class Movement : MonoBehaviour
 
 
             //Right Swipe: Works fine. No need to change
-            else if (Input.touches[0].position.x >= startPos.x +pixelDistToDetect)
+            else if (Input.touches[0].position.x >= startPos.x + pixelDistToDetect)
             {
                 fingerDown = false;
                 Debug.Log("Swipe Right");
@@ -138,16 +138,16 @@ public class Movement : MonoBehaviour
             }
 
             //Down Swipe, Need testing
-            else if (Input.touches[0].position.y <= startPos.y +pixelDistToDetect)
+            else if (Input.touches[0].position.y <= startPos.y - pixelDistToDetect)
             {
                 fingerDown = false;
                 Debug.Log("Swipe Down");
 
-                playerAnim.SetBool("roll", true);
-                slide = true;
                 playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
+                slide = true;
+                playerAnim.SetBool("roll", true);
+
             }
-            
         }
 
         if(fingerDown && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended)
