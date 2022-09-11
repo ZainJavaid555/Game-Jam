@@ -28,6 +28,7 @@ public class Movement : MonoBehaviour
 
 
     public bool slide;
+    
 
     private Animator playerAnim;
     private Rigidbody playerRb;
@@ -61,7 +62,7 @@ public class Movement : MonoBehaviour
         {
 
             //Up Swipe: Works fine. No need to change
-            if (Input.touches[0].position.y >= startPos.y + pixelDistToDetect)
+            if ((Input.touches[0].position.y >= startPos.y + pixelDistToDetect) && isGround || (Input.touches[0].position.y >= startPos.y + pixelDistToDetect) && isPlatform)
             {
                 fingerDown = false;
                 Debug.Log("Swipe Up");
@@ -72,30 +73,26 @@ public class Movement : MonoBehaviour
                 jump = true;
 
                 playerAnim.SetBool("jump", true);
+                
+                if(jump == false)
+                {
+                    playerAnim.SetBool("jump", false);
+                }
 
             }
-            /*else if(jump == false)
-            {
-                playerAnim.SetBool("jump", false);
-            }*/
 
-            //DOOWWNNN
-            /*if (Input.touches[0].position.y <= startPos.y + pixelDistToDetect)
+            //Down Swipe, Need testing
+            else if (Input.touches[0].position.y <=  startPos.y - pixelDistToDetect)
             {
-                fingerDown = false;
-                Debug.Log("Down");
+                //fingerDown = false;
+                //Debug.Log("Swipe Down");
 
-                playerAnim.SetBool("roll", true);
-                slide = true;
-                playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
+                Roll();
+
+                
 
 
             }
-            else if (jump == false)
-            {
-                playerAnim.SetBool("roll", false);
-            }*/
-
 
 
 
@@ -137,17 +134,7 @@ public class Movement : MonoBehaviour
                 }
             }
 
-            //Down Swipe, Need testing
-            else if (Input.touches[0].position.y <= startPos.y - pixelDistToDetect)
-            {
-                fingerDown = false;
-                Debug.Log("Swipe Down");
-
-                playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
-                slide = true;
-                playerAnim.SetBool("roll", true);
-
-            }
+           
         }
 
         if(fingerDown && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended)
@@ -260,19 +247,25 @@ public class Movement : MonoBehaviour
 
     public void Roll()
     {
-        if (Input.GetKey(KeyCode.DownArrow)) //&& isGround && !jump)
+        if (/*Input.GetKey(KeyCode.DownArrow) ||*/ (Input.touches[0].position.y <= startPos.y - pixelDistToDetect)) //&& isGround && !jump)
         {
+            
             
             playerAnim.SetBool("roll", true);
             slide = true;
             playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
-           
+
+            fingerDown = false;
+
+            
             
         }
         else
         {
+            
             playerAnim.SetBool("roll", false);
             slide = false;
+            
             
         }
 
@@ -309,5 +302,8 @@ public class Movement : MonoBehaviour
     }
 
  
+
+
+
 
 }

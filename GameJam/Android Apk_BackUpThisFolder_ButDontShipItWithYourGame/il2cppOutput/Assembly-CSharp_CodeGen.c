@@ -112,33 +112,63 @@ extern void U3CStartCounterU3Ed__7_System_Collections_Generic_IEnumeratorU3CSyst
 extern void U3CStartCounterU3Ed__7_System_Collections_IEnumerator_Reset_m22EF52331D4F9DC943F8AFA46879EFAD2BD5CE2D (void);
 // 0x00000032 System.Object Test/<StartCounter>d__7::System.Collections.IEnumerator.get_Current()
 extern void U3CStartCounterU3Ed__7_System_Collections_IEnumerator_get_Current_mBAAC50FEBBCB299C481C13177275157D77181D4B (void);
-// 0x00000033 Chunk Chunk::ShowChunk()
+// 0x00000033 System.Void ThiefMovement::Start()
+extern void ThiefMovement_Start_m62291C6C4A0F807628FFEA314A527FEFBED0F306 (void);
+// 0x00000034 System.Void ThiefMovement::Update()
+extern void ThiefMovement_Update_mC28D8B65714CD73C59747DA89290FA64F871B717 (void);
+// 0x00000035 System.Void ThiefMovement::.ctor()
+extern void ThiefMovement__ctor_m57D4B1FAB07A731B1523B7DD69E52841B63841FB (void);
+// 0x00000036 Chunk Chunk::ShowChunk()
 extern void Chunk_ShowChunk_m38B7A130142DA413145307F22C2F620ECA2801DC (void);
-// 0x00000034 Chunk Chunk::HideChunk()
+// 0x00000037 Chunk Chunk::HideChunk()
 extern void Chunk_HideChunk_mFB0F7B469F21AEF9675D4785E490F2F146D6A216 (void);
-// 0x00000035 System.Void Chunk::.ctor()
+// 0x00000038 System.Void Chunk::.ctor()
 extern void Chunk__ctor_m15FE9E61CAE19C4DE60C2D86C3FF39F4FE22205D (void);
-// 0x00000036 System.Void WorldGeneration::Awake()
+// 0x00000039 System.Void WorldGeneration::Awake()
 extern void WorldGeneration_Awake_m7CDE9CC44C1820A9203B7B7ABE05908E48947E74 (void);
-// 0x00000037 System.Void WorldGeneration::Start()
+// 0x0000003A System.Void WorldGeneration::Start()
 extern void WorldGeneration_Start_mB06F8D594078B45968D7C7754AD8E87FC8FE60F3 (void);
-// 0x00000038 System.Void WorldGeneration::Update()
+// 0x0000003B System.Void WorldGeneration::Update()
 extern void WorldGeneration_Update_m5A69BC7EA3ACDE72DAB75D574C8BFA15F4F54B1A (void);
-// 0x00000039 System.Void WorldGeneration::ScanPosition()
+// 0x0000003C System.Void WorldGeneration::ScanPosition()
 extern void WorldGeneration_ScanPosition_mC225017E5CE28DF48DEFE6745B9B0175A2899BA1 (void);
-// 0x0000003A System.Void WorldGeneration::SpawnNewChunk()
+// 0x0000003D System.Void WorldGeneration::SpawnNewChunk()
 extern void WorldGeneration_SpawnNewChunk_m6DB83D4013330ACA4A88B328F1DF8C3CB282A452 (void);
-// 0x0000003B System.Void WorldGeneration::DeleteLastChunk()
+// 0x0000003E System.Void WorldGeneration::DeleteLastChunk()
 extern void WorldGeneration_DeleteLastChunk_m3999ED347332EF5818E44C7B3632945D9D3CCBFB (void);
-// 0x0000003C System.Void WorldGeneration::ResetWorld()
+// 0x0000003F System.Void WorldGeneration::ResetWorld()
 extern void WorldGeneration_ResetWorld_mF5212E2D01C69C1E5B555BCAE1B5D6526A511794 (void);
-// 0x0000003D System.Void WorldGeneration::.ctor()
+// 0x00000040 System.Void WorldGeneration::.ctor()
 extern void WorldGeneration__ctor_m3F856F35C25D1D14970F1B8E3AC23AA4A5E2F9E3 (void);
-// 0x0000003E System.Void WorldGeneration/<>c__DisplayClass12_0::.ctor()
+// 0x00000041 System.Void WorldGeneration/<>c__DisplayClass12_0::.ctor()
 extern void U3CU3Ec__DisplayClass12_0__ctor_mA3274F3AD7703FE53CB05DE35665E8F27719168A (void);
-// 0x0000003F System.Boolean WorldGeneration/<>c__DisplayClass12_0::<SpawnNewChunk>b__0(Chunk)
+// 0x00000042 System.Boolean WorldGeneration/<>c__DisplayClass12_0::<SpawnNewChunk>b__0(Chunk)
 extern void U3CU3Ec__DisplayClass12_0_U3CSpawnNewChunkU3Eb__0_m8BC3793561AF1B26562A040F05394A0E1DB4A99D (void);
-static Il2CppMethodPointer s_methodPointers[63] = 
+// 0x00000043 System.Void thiefhurdles::Start()
+extern void thiefhurdles_Start_m879A57DB9679FBD642DDD4B0B215079550085EDE (void);
+// 0x00000044 System.Void thiefhurdles::Update()
+extern void thiefhurdles_Update_m27D9C1A3A9046BC0D29991DFA66ECEE828B8EE62 (void);
+// 0x00000045 System.Void thiefhurdles::OnCollisionEnter(UnityEngine.Collision)
+extern void thiefhurdles_OnCollisionEnter_m3F5158710C6236CDEDCAE94D919CA92AE5D31EED (void);
+// 0x00000046 System.Void thiefhurdles::OnCollisionExit(UnityEngine.Collision)
+extern void thiefhurdles_OnCollisionExit_mC06486FDD2761802E3FEDB6F553E0DFA063F6099 (void);
+// 0x00000047 System.Collections.IEnumerator thiefhurdles::StartCounter()
+extern void thiefhurdles_StartCounter_m224B8D48B9714FDC3DAC6890FD7346E72EC1CF7D (void);
+// 0x00000048 System.Void thiefhurdles::.ctor()
+extern void thiefhurdles__ctor_m3C6BFDC1FEDD73A9068F1E0198587A030F68CC75 (void);
+// 0x00000049 System.Void thiefhurdles/<StartCounter>d__8::.ctor(System.Int32)
+extern void U3CStartCounterU3Ed__8__ctor_mAF21AFDEC79F049FFCD004C137D4F23FE137B131 (void);
+// 0x0000004A System.Void thiefhurdles/<StartCounter>d__8::System.IDisposable.Dispose()
+extern void U3CStartCounterU3Ed__8_System_IDisposable_Dispose_mAF28420B7173AEDB4668F50BB63B6759EE9FD777 (void);
+// 0x0000004B System.Boolean thiefhurdles/<StartCounter>d__8::MoveNext()
+extern void U3CStartCounterU3Ed__8_MoveNext_mBC9E0885E1B054301B0D5DB195A8D94747B3CE3D (void);
+// 0x0000004C System.Object thiefhurdles/<StartCounter>d__8::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CStartCounterU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD5E95C7F37033162377B0AFB8C68B5D50CE83503 (void);
+// 0x0000004D System.Void thiefhurdles/<StartCounter>d__8::System.Collections.IEnumerator.Reset()
+extern void U3CStartCounterU3Ed__8_System_Collections_IEnumerator_Reset_m9DB1471EB8D08F8904D06D4604E6DEDC84804BCB (void);
+// 0x0000004E System.Object thiefhurdles/<StartCounter>d__8::System.Collections.IEnumerator.get_Current()
+extern void U3CStartCounterU3Ed__8_System_Collections_IEnumerator_get_Current_m87DE51564BF058DFBD8A2FD02DCC558DF635037E (void);
+static Il2CppMethodPointer s_methodPointers[78] = 
 {
 	MouseLook_Start_m08FD16A47A96624540CD1B8EBA5FFAA1FD75E686,
 	MouseLook_Update_m18C0A114A78C19B888A9F74CA1FE5A837DF9E42A,
@@ -190,6 +220,9 @@ static Il2CppMethodPointer s_methodPointers[63] =
 	U3CStartCounterU3Ed__7_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mAE8891DA5EB5C6AB08AC39796582AFD28C8035BC,
 	U3CStartCounterU3Ed__7_System_Collections_IEnumerator_Reset_m22EF52331D4F9DC943F8AFA46879EFAD2BD5CE2D,
 	U3CStartCounterU3Ed__7_System_Collections_IEnumerator_get_Current_mBAAC50FEBBCB299C481C13177275157D77181D4B,
+	ThiefMovement_Start_m62291C6C4A0F807628FFEA314A527FEFBED0F306,
+	ThiefMovement_Update_mC28D8B65714CD73C59747DA89290FA64F871B717,
+	ThiefMovement__ctor_m57D4B1FAB07A731B1523B7DD69E52841B63841FB,
 	Chunk_ShowChunk_m38B7A130142DA413145307F22C2F620ECA2801DC,
 	Chunk_HideChunk_mFB0F7B469F21AEF9675D4785E490F2F146D6A216,
 	Chunk__ctor_m15FE9E61CAE19C4DE60C2D86C3FF39F4FE22205D,
@@ -203,8 +236,20 @@ static Il2CppMethodPointer s_methodPointers[63] =
 	WorldGeneration__ctor_m3F856F35C25D1D14970F1B8E3AC23AA4A5E2F9E3,
 	U3CU3Ec__DisplayClass12_0__ctor_mA3274F3AD7703FE53CB05DE35665E8F27719168A,
 	U3CU3Ec__DisplayClass12_0_U3CSpawnNewChunkU3Eb__0_m8BC3793561AF1B26562A040F05394A0E1DB4A99D,
+	thiefhurdles_Start_m879A57DB9679FBD642DDD4B0B215079550085EDE,
+	thiefhurdles_Update_m27D9C1A3A9046BC0D29991DFA66ECEE828B8EE62,
+	thiefhurdles_OnCollisionEnter_m3F5158710C6236CDEDCAE94D919CA92AE5D31EED,
+	thiefhurdles_OnCollisionExit_mC06486FDD2761802E3FEDB6F553E0DFA063F6099,
+	thiefhurdles_StartCounter_m224B8D48B9714FDC3DAC6890FD7346E72EC1CF7D,
+	thiefhurdles__ctor_m3C6BFDC1FEDD73A9068F1E0198587A030F68CC75,
+	U3CStartCounterU3Ed__8__ctor_mAF21AFDEC79F049FFCD004C137D4F23FE137B131,
+	U3CStartCounterU3Ed__8_System_IDisposable_Dispose_mAF28420B7173AEDB4668F50BB63B6759EE9FD777,
+	U3CStartCounterU3Ed__8_MoveNext_mBC9E0885E1B054301B0D5DB195A8D94747B3CE3D,
+	U3CStartCounterU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD5E95C7F37033162377B0AFB8C68B5D50CE83503,
+	U3CStartCounterU3Ed__8_System_Collections_IEnumerator_Reset_m9DB1471EB8D08F8904D06D4604E6DEDC84804BCB,
+	U3CStartCounterU3Ed__8_System_Collections_IEnumerator_get_Current_m87DE51564BF058DFBD8A2FD02DCC558DF635037E,
 };
-static const int32_t s_InvokerIndices[63] = 
+static const int32_t s_InvokerIndices[78] = 
 {
 	5491,
 	5491,
@@ -256,6 +301,9 @@ static const int32_t s_InvokerIndices[63] =
 	5372,
 	5491,
 	5372,
+	5491,
+	5491,
+	5491,
 	5372,
 	5372,
 	5491,
@@ -269,12 +317,24 @@ static const int32_t s_InvokerIndices[63] =
 	5491,
 	5491,
 	3127,
+	5491,
+	5491,
+	4384,
+	4384,
+	5372,
+	5491,
+	4358,
+	5491,
+	5292,
+	5372,
+	5491,
+	5372,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	63,
+	78,
 	s_methodPointers,
 	0,
 	NULL,
