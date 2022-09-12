@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
     public bool stand = true;
     public bool under = false;
 
+    public float countDown;
+
     //Mobile Touch Controller Varriables
 
     private Vector3 startPos;
@@ -56,6 +58,8 @@ public class Movement : MonoBehaviour
         {
             startPos = Input.touches[0].position;
             fingerDown = true;
+            
+            
         }
 
         if(fingerDown)
@@ -82,25 +86,33 @@ public class Movement : MonoBehaviour
             }
 
             //Down Swipe, Need testing
-            else if (Input.touches[0].position.y <=  startPos.y - pixelDistToDetect)
+
+            
+
+            if (Input.touches[0].position.y <=  startPos.y - pixelDistToDetect)
             {
-                //fingerDown = false;
+                fingerDown = false;
                 //Debug.Log("Swipe Down");
 
                 Roll();
-
-                
-
+                StartCoroutine(StartCounter());
 
             }
+            else
+            {
+                playerAnim.SetBool("roll", false);
+                slide = false;
+            }
+            
 
+            
 
 
 
 
             //Left Swipe: Works fine. No need to change
 
-            else if(Input.touches[0].position.x <= startPos.x - pixelDistToDetect)
+            if(Input.touches[0].position.x <= startPos.x - pixelDistToDetect)
             {
                 fingerDown = false;
                 Debug.Log("swipe Left");
@@ -118,7 +130,7 @@ public class Movement : MonoBehaviour
 
 
             //Right Swipe: Works fine. No need to change
-            else if (Input.touches[0].position.x >= startPos.x + pixelDistToDetect)
+            if (Input.touches[0].position.x >= startPos.x + pixelDistToDetect)
             {
                 fingerDown = false;
                 Debug.Log("Swipe Right");
@@ -133,6 +145,8 @@ public class Movement : MonoBehaviour
                     transform.position = new Vector3(0, transform.position.y, transform.position.z);
                 }
             }
+
+            
 
            
         }
@@ -255,7 +269,7 @@ public class Movement : MonoBehaviour
             slide = true;
             playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
 
-            fingerDown = false;
+            playerAnim.SetBool("run", true);
 
             
             
@@ -301,7 +315,26 @@ public class Movement : MonoBehaviour
         }
     }
 
- 
+    private IEnumerator StartCounter()
+    {
+        countDown = 0.5f;
+        for (int i = 0; i < 10000; i++)
+        {
+            while (countDown >= 0)
+            {
+                //Debug.Log(i++);
+                countDown -= Time.smoothDeltaTime;
+                //hurdle.isTrigger = true;
+                //ColliderObj.SetActive(false);
+                yield return null;
+            }
+            //ColliderObj.SetActive(true);
+        }
+
+        playerAnim.SetBool("roll", false);
+        slide = false;
+
+    }
 
 
 
