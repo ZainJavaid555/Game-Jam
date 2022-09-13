@@ -7,6 +7,7 @@ public class CameraStop : MonoBehaviour
 {
     Movement ms;
     public GameObject Player;
+    public float cameraSpeed;
 
     public float countDown;
 
@@ -18,6 +19,8 @@ public class CameraStop : MonoBehaviour
     private void Awake()
     {
         ms = Player.GetComponent<Movement>();
+
+        cameraSpeed = ms.speed;
     }
 
     private void Update()
@@ -30,6 +33,10 @@ public class CameraStop : MonoBehaviour
 
             StartCoroutine(StartCounter());
         }
+
+        
+
+        
     }
 
 

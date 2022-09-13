@@ -112,7 +112,7 @@ public class Movement : MonoBehaviour
 
             //Left Swipe: Works fine. No need to change
 
-            if(Input.touches[0].position.x <= startPos.x - pixelDistToDetect)
+            /*if(Input.touches[0].position.x <= startPos.x - pixelDistToDetect)
             {
                 fingerDown = false;
                 Debug.Log("swipe Left");
@@ -144,7 +144,7 @@ public class Movement : MonoBehaviour
                 {
                     transform.position = new Vector3(0, transform.position.y, transform.position.z);
                 }
-            }
+            }*/
 
             
 
