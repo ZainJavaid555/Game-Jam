@@ -60,6 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitCollider: {fileID: 741038164964929327}
   safeCollider: {fileID: 5906856266350248509}
+  thiefHit: 0
+  countDown: 0
 --- !u!1 &5729967699579697214
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +125,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 93befa238f025bd4a908f8f62625befc, type: 2}
+  - {fileID: 2100000, guid: 9dffa737f71936845a1e109024d06e43, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -205,3 +207,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitCollider: {fileID: 741038164964929327}
   safeCollider: {fileID: 5906856266350248509}
+  thiefHit: 0
+  countDown: 0
