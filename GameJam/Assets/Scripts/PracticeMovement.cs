@@ -17,6 +17,10 @@ public class PracticeMovement : MonoBehaviour
     private bool fingerDown;
 
 
+    float movementSpeed = 10.0f;
+
+
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -69,7 +73,7 @@ public class PracticeMovement : MonoBehaviour
 
             }
 
-                
+
 
 
 
@@ -143,13 +147,13 @@ public class PracticeMovement : MonoBehaviour
 
         if (transform.position.x >= -1.5 && transform.position.x <= 1.5)
         {
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 right = true;
                 left = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 right = false;
                 left = true;
@@ -165,9 +169,17 @@ public class PracticeMovement : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(1.5f, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
             }
 
-            if (transform.position.x >= -1.5 && transform.position.x <= 0)
+            else if (transform.position.x >= 0 && transform.position.x <= 1.5)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(1.5f, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
+            }
+
+
+
+            else if (transform.position.x >= -1.5 && transform.position.x <= 0)
             {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
+
             }
 
         }
@@ -187,17 +199,18 @@ public class PracticeMovement : MonoBehaviour
             }
 
 
-            if (transform.position.x <= 0 && transform.position.x >= -1.5)
+            else if (transform.position.x <= 0 && transform.position.x >= -1.5)
             {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(-1.5f, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
             }
         }
 
-        if (transform.position.x == 0)
+        else if (transform.position.x == 0)
         {
             right = false;
             left = false;
         }
     }
+
 }
 

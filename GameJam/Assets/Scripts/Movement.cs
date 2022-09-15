@@ -15,6 +15,10 @@ public class Movement : MonoBehaviour
     public bool stand = true;
     public bool under = false;
 
+
+    
+
+    //For Coroutine Function
     public float countDown;
 
     //Mobile Touch Controller Varriables
@@ -289,20 +293,30 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            playerAnim.SetBool("right", true);
+            playerAnim.SetBool("left", false);
+
             if (transform.position.x >= 0)
             {
                 transform.position = new Vector3(1.5f, transform.position.y, transform.position.z);
             }
 
+
             if (transform.position.x == -1.5)
             {
                 transform.position = new Vector3(0, transform.position.y, transform.position.z);
             }
-
         }
+        else
+            playerAnim.SetBool("right", false);
+
+
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            playerAnim.SetBool("left", true);
+            playerAnim.SetBool("right", false);
+
             if (transform.position.x == 0)
             {
                 transform.position = new Vector3(-1.5f, transform.position.y, transform.position.z);
@@ -313,6 +327,8 @@ public class Movement : MonoBehaviour
                 transform.position = new Vector3(0, transform.position.y, transform.position.z);
             }
         }
+        else
+            playerAnim.SetBool("left", false);
     }
 
     private IEnumerator StartCounter()
