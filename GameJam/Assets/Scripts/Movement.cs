@@ -178,10 +178,12 @@ public class Movement : MonoBehaviour
         }
 
 
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        //transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
         //Player Editor Movement
-        EditorPlayerMovement();
+       
+        
+        //EditorPlayerMovement();
 
 
 
@@ -289,7 +291,7 @@ public class Movement : MonoBehaviour
 
     }
 
-    public void EditorPlayerMovement()
+    /*public void EditorPlayerMovement()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -326,10 +328,9 @@ public class Movement : MonoBehaviour
             {
                 transform.position = new Vector3(0, transform.position.y, transform.position.z);
             }
-        }
-        else
-            playerAnim.SetBool("left", false);
-    }
+        }*/
+
+    
 
     private IEnumerator StartCounter()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PracticeMovement : MonoBehaviour
 {
     //public float turnSpeed = 10.0f;
-    //public float speed = 5.0f;
+    public float speed = 5.0f;
 
     public bool right;
     public bool left;
@@ -19,7 +19,13 @@ public class PracticeMovement : MonoBehaviour
 
     float movementSpeed = 10.0f;
 
+    private Animator playerAnim;
 
+
+    private void Start()
+    {
+        playerAnim = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -36,11 +42,41 @@ public class PracticeMovement : MonoBehaviour
         if (fingerDown)
         {
 
+            //Right Swipe: Works fine. No need to change
+
+            if (Input.touches[0].position.x >= startPos.x + pixelDistToDetect || Input.GetKey(KeyCode.RightArrow))
+            {
+
+                
+
+
+                fingerDown = false;
+                Debug.Log("Swipe Right");
+
+                if (transform.position.x >= -1.5 && transform.position.x <= 1.5)
+                {
+                    right = true;
+                    left = false;
+
+                    playerAnim.SetBool("right", true);
+                    playerAnim.SetBool("left", false);
+                }
+
+
+            }
+           
+
+
+
+
+
 
 
             //Left Swipe: Works fine. No need to change
-            if (Input.touches[0].position.x <= startPos.x - pixelDistToDetect)
+            if (Input.touches[0].position.x <= startPos.x - pixelDistToDetect || Input.GetKey(KeyCode.LeftArrow))
             {
+                
+
                 fingerDown = false;
                 Debug.Log("swipe Left");
 
@@ -51,27 +87,14 @@ public class PracticeMovement : MonoBehaviour
                 }
 
             }
+            
 
 
 
 
 
 
-            //Right Swipe: Works fine. No need to change
-
-            if (Input.touches[0].position.x >= startPos.x + pixelDistToDetect)
-            {
-                fingerDown = false;
-                Debug.Log("Swipe Right");
-
-                if (transform.position.x >= -1.5 && transform.position.x <= 1.5)
-                {
-                    right = true;
-                    left = false;
-                }
-
-
-            }
+           
 
 
 
@@ -92,56 +115,10 @@ public class PracticeMovement : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //transform.Translate(Vector3.forward * speed * Time.deltaTime);
+       
 
         float movementSpeed = 10.0f;
-
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
 
 
@@ -151,44 +128,67 @@ public class PracticeMovement : MonoBehaviour
             {
                 right = true;
                 left = false;
+
+                
             }
 
-            if (Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.LeftArrow))
             {
                 right = false;
                 left = true;
+
+               
+
             }
         }
 
 
         if (right)
         {
-
-            if (transform.position.x >= 0 && transform.position.x <= 1.5)
+            
+            
+            if(transform.position.x >= 0 && right)
             {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(1.5f, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
-            }
-
-            else if (transform.position.x >= 0 && transform.position.x <= 1.5)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(1.5f, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
+                
             }
 
 
 
-            else if (transform.position.x >= -1.5 && transform.position.x <= 0)
+            else if (transform.position.x >= -1.5 && right)
             {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
+                
 
+                if (transform.position.x == 0)
+                {
+                    right = false;
+                }
             }
 
+          
+           
+            
         }
+        
+            
+
+
 
         if (left)
         {
-            if (transform.position.x >= 0 && transform.position.x <= 1.5)
+            
+
+            if (transform.position.x <= 0 && left)
             {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(0.0f, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(-1.5f, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
+
+                
+            }
+
+            else if(transform.position.x <= 1.5 && left)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
 
                 if (transform.position.x == 0)
                 {
@@ -196,20 +196,20 @@ public class PracticeMovement : MonoBehaviour
                     left = false;
 
                 }
-            }
 
-
-            else if (transform.position.x <= 0 && transform.position.x >= -1.5)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(-1.5f, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
+                
             }
+            
+           
+           
         }
+            
 
-        else if (transform.position.x == 0)
+       /* else if (transform.position.x == 0)
         {
             right = false;
             left = false;
-        }
+        }*/
     }
 
 }

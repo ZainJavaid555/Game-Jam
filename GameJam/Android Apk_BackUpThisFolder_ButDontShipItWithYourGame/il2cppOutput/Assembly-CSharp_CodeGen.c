@@ -88,24 +88,24 @@ extern void Movement_OnCollisionEnter_m65359528EC5A6B8741D80CBFA1051A0CCE80635E 
 extern void Movement_OnCollisionExit_m7A95C986EEA4813A0D9007E440DA732EEC0B5994 (void);
 // 0x00000026 System.Void Movement::Roll()
 extern void Movement_Roll_m3B07E37D69AB4F932BD5E1B8DCD5911D79547F28 (void);
-// 0x00000027 System.Void Movement::EditorPlayerMovement()
-extern void Movement_EditorPlayerMovement_m44F883B42595F1D06426938D0F01C6B0295B1418 (void);
-// 0x00000028 System.Collections.IEnumerator Movement::StartCounter()
+// 0x00000027 System.Collections.IEnumerator Movement::StartCounter()
 extern void Movement_StartCounter_mD1C1DB33C26EE5C0BF5ADD56AD385D1430E01297 (void);
-// 0x00000029 System.Void Movement::.ctor()
+// 0x00000028 System.Void Movement::.ctor()
 extern void Movement__ctor_mCB72C1AD57256D73959D74FB86C5D0AA69EAE7ED (void);
-// 0x0000002A System.Void Movement/<StartCounter>d__25::.ctor(System.Int32)
-extern void U3CStartCounterU3Ed__25__ctor_m8598D7841EDD441903BFE0E9599685495BB89170 (void);
-// 0x0000002B System.Void Movement/<StartCounter>d__25::System.IDisposable.Dispose()
-extern void U3CStartCounterU3Ed__25_System_IDisposable_Dispose_m916953ABE7F20DFFB4C6DB543BA1781613A573E8 (void);
-// 0x0000002C System.Boolean Movement/<StartCounter>d__25::MoveNext()
-extern void U3CStartCounterU3Ed__25_MoveNext_mECB667990A2718E167ADECFEE5720B2CB8B64D50 (void);
-// 0x0000002D System.Object Movement/<StartCounter>d__25::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CStartCounterU3Ed__25_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m6B0FD156CBC37C4F660F0E026EBF1DDB2E263013 (void);
-// 0x0000002E System.Void Movement/<StartCounter>d__25::System.Collections.IEnumerator.Reset()
-extern void U3CStartCounterU3Ed__25_System_Collections_IEnumerator_Reset_m72C76717AEA36BBE71CEC02418753DAD1514753A (void);
-// 0x0000002F System.Object Movement/<StartCounter>d__25::System.Collections.IEnumerator.get_Current()
-extern void U3CStartCounterU3Ed__25_System_Collections_IEnumerator_get_Current_m319549ECF7C55FD03A4D55DFE5139E098DBA91BD (void);
+// 0x00000029 System.Void Movement/<StartCounter>d__24::.ctor(System.Int32)
+extern void U3CStartCounterU3Ed__24__ctor_m688AFE23EEC07C45D76C473BE3287AB3A31DDAB4 (void);
+// 0x0000002A System.Void Movement/<StartCounter>d__24::System.IDisposable.Dispose()
+extern void U3CStartCounterU3Ed__24_System_IDisposable_Dispose_m063F7484E617FB401F1077BD6953C65F38B7FF64 (void);
+// 0x0000002B System.Boolean Movement/<StartCounter>d__24::MoveNext()
+extern void U3CStartCounterU3Ed__24_MoveNext_m10366C72597C8F067EEB20E47481316905D45D79 (void);
+// 0x0000002C System.Object Movement/<StartCounter>d__24::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CStartCounterU3Ed__24_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m61C8E3B81722E6E794736ACAF509E36CD745ACE7 (void);
+// 0x0000002D System.Void Movement/<StartCounter>d__24::System.Collections.IEnumerator.Reset()
+extern void U3CStartCounterU3Ed__24_System_Collections_IEnumerator_Reset_m73851DDE715628F001D45C430B9F6272BEA10069 (void);
+// 0x0000002E System.Object Movement/<StartCounter>d__24::System.Collections.IEnumerator.get_Current()
+extern void U3CStartCounterU3Ed__24_System_Collections_IEnumerator_get_Current_m577623FA6461580BD7B40EAA1F487316690CF9D3 (void);
+// 0x0000002F System.Void PracticeMovement::Start()
+extern void PracticeMovement_Start_m2BA6E94ECF20B3CA3CF4288C8CB475F7155628E6 (void);
 // 0x00000030 System.Void PracticeMovement::FixedUpdate()
 extern void PracticeMovement_FixedUpdate_m219D660DB190481D395B9E5A8A0589565DC5628C (void);
 // 0x00000031 System.Void PracticeMovement::.ctor()
@@ -186,7 +186,37 @@ extern void U3CStartCounterU3Ed__8_System_Collections_Generic_IEnumeratorU3CSyst
 extern void U3CStartCounterU3Ed__8_System_Collections_IEnumerator_Reset_m9DB1471EB8D08F8904D06D4604E6DEDC84804BCB (void);
 // 0x00000057 System.Object thiefhurdles/<StartCounter>d__8::System.Collections.IEnumerator.get_Current()
 extern void U3CStartCounterU3Ed__8_System_Collections_IEnumerator_get_Current_m87DE51564BF058DFBD8A2FD02DCC558DF635037E (void);
-static Il2CppMethodPointer s_methodPointers[87] = 
+// 0x00000058 BrokenVector.LowPolyFencePack.DoorController/DoorState BrokenVector.LowPolyFencePack.DoorController::get_CurrentState()
+extern void DoorController_get_CurrentState_m10DFDE50F042C43A25528B905B73559B5C94AFA1 (void);
+// 0x00000059 System.Void BrokenVector.LowPolyFencePack.DoorController::set_CurrentState(BrokenVector.LowPolyFencePack.DoorController/DoorState)
+extern void DoorController_set_CurrentState_mED5164D84AA548BB5DB9BF851FE7252F06302425 (void);
+// 0x0000005A System.Boolean BrokenVector.LowPolyFencePack.DoorController::get_IsDoorOpen()
+extern void DoorController_get_IsDoorOpen_mED0E43F2137FAC2A1D958EBA93C65BFBC57C2E59 (void);
+// 0x0000005B System.Boolean BrokenVector.LowPolyFencePack.DoorController::get_IsDoorClosed()
+extern void DoorController_get_IsDoorClosed_m8D72CCCE18CCDC51FEF860817274E3E6A83E8287 (void);
+// 0x0000005C System.Void BrokenVector.LowPolyFencePack.DoorController::Awake()
+extern void DoorController_Awake_m41A67CDA59EBE84C1E7540CF44B3AC23D8646810 (void);
+// 0x0000005D System.Void BrokenVector.LowPolyFencePack.DoorController::Start()
+extern void DoorController_Start_mF030C0AB6F969D4EA6A506E6472E32D79BAE4C5E (void);
+// 0x0000005E System.Void BrokenVector.LowPolyFencePack.DoorController::CloseDoor()
+extern void DoorController_CloseDoor_m9B2BEC56EAB5EA626A31E20C7001749C50014CBA (void);
+// 0x0000005F System.Void BrokenVector.LowPolyFencePack.DoorController::OpenDoor()
+extern void DoorController_OpenDoor_mAD7D25AF52286A8143F9C3470ECDEEB748F7900D (void);
+// 0x00000060 System.Void BrokenVector.LowPolyFencePack.DoorController::ToggleDoor()
+extern void DoorController_ToggleDoor_mB8CF6CD38A611CBF095A133AFB9F8585E64E39B6 (void);
+// 0x00000061 System.Void BrokenVector.LowPolyFencePack.DoorController::Animate()
+extern void DoorController_Animate_mF330E38A70AD7554637FE4703D4388D5573C098D (void);
+// 0x00000062 System.String BrokenVector.LowPolyFencePack.DoorController::GetCurrentAnimation()
+extern void DoorController_GetCurrentAnimation_m7A212994A7997783D313B5F39C347474C49AAD77 (void);
+// 0x00000063 System.Void BrokenVector.LowPolyFencePack.DoorController::.ctor()
+extern void DoorController__ctor_m7B71D990849C0F95580BFBA82487CD93B412850A (void);
+// 0x00000064 System.Void BrokenVector.LowPolyFencePack.DoorToggle::Awake()
+extern void DoorToggle_Awake_m0D47CE1711163AE3CDE876AD857549C5B3C3E375 (void);
+// 0x00000065 System.Void BrokenVector.LowPolyFencePack.DoorToggle::OnMouseDown()
+extern void DoorToggle_OnMouseDown_mDACA186648D0AD96738A924CB0EAB03AD72A2E5D (void);
+// 0x00000066 System.Void BrokenVector.LowPolyFencePack.DoorToggle::.ctor()
+extern void DoorToggle__ctor_mA23E454284DE2CDFC5AD29F51C7464E15B2B4377 (void);
+static Il2CppMethodPointer s_methodPointers[102] = 
 {
 	MouseLook_Start_m08FD16A47A96624540CD1B8EBA5FFAA1FD75E686,
 	MouseLook_Update_m18C0A114A78C19B888A9F74CA1FE5A837DF9E42A,
@@ -226,15 +256,15 @@ static Il2CppMethodPointer s_methodPointers[87] =
 	Movement_OnCollisionEnter_m65359528EC5A6B8741D80CBFA1051A0CCE80635E,
 	Movement_OnCollisionExit_m7A95C986EEA4813A0D9007E440DA732EEC0B5994,
 	Movement_Roll_m3B07E37D69AB4F932BD5E1B8DCD5911D79547F28,
-	Movement_EditorPlayerMovement_m44F883B42595F1D06426938D0F01C6B0295B1418,
 	Movement_StartCounter_mD1C1DB33C26EE5C0BF5ADD56AD385D1430E01297,
 	Movement__ctor_mCB72C1AD57256D73959D74FB86C5D0AA69EAE7ED,
-	U3CStartCounterU3Ed__25__ctor_m8598D7841EDD441903BFE0E9599685495BB89170,
-	U3CStartCounterU3Ed__25_System_IDisposable_Dispose_m916953ABE7F20DFFB4C6DB543BA1781613A573E8,
-	U3CStartCounterU3Ed__25_MoveNext_mECB667990A2718E167ADECFEE5720B2CB8B64D50,
-	U3CStartCounterU3Ed__25_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m6B0FD156CBC37C4F660F0E026EBF1DDB2E263013,
-	U3CStartCounterU3Ed__25_System_Collections_IEnumerator_Reset_m72C76717AEA36BBE71CEC02418753DAD1514753A,
-	U3CStartCounterU3Ed__25_System_Collections_IEnumerator_get_Current_m319549ECF7C55FD03A4D55DFE5139E098DBA91BD,
+	U3CStartCounterU3Ed__24__ctor_m688AFE23EEC07C45D76C473BE3287AB3A31DDAB4,
+	U3CStartCounterU3Ed__24_System_IDisposable_Dispose_m063F7484E617FB401F1077BD6953C65F38B7FF64,
+	U3CStartCounterU3Ed__24_MoveNext_m10366C72597C8F067EEB20E47481316905D45D79,
+	U3CStartCounterU3Ed__24_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m61C8E3B81722E6E794736ACAF509E36CD745ACE7,
+	U3CStartCounterU3Ed__24_System_Collections_IEnumerator_Reset_m73851DDE715628F001D45C430B9F6272BEA10069,
+	U3CStartCounterU3Ed__24_System_Collections_IEnumerator_get_Current_m577623FA6461580BD7B40EAA1F487316690CF9D3,
+	PracticeMovement_Start_m2BA6E94ECF20B3CA3CF4288C8CB475F7155628E6,
 	PracticeMovement_FixedUpdate_m219D660DB190481D395B9E5A8A0589565DC5628C,
 	PracticeMovement__ctor_m17EE903D598352B3FB1E6DF0471A213038DBB855,
 	Test_Awake_m13A7B7938BA67D1CD19AE89EA693B5E3D32580AD,
@@ -275,102 +305,132 @@ static Il2CppMethodPointer s_methodPointers[87] =
 	U3CStartCounterU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD5E95C7F37033162377B0AFB8C68B5D50CE83503,
 	U3CStartCounterU3Ed__8_System_Collections_IEnumerator_Reset_m9DB1471EB8D08F8904D06D4604E6DEDC84804BCB,
 	U3CStartCounterU3Ed__8_System_Collections_IEnumerator_get_Current_m87DE51564BF058DFBD8A2FD02DCC558DF635037E,
+	DoorController_get_CurrentState_m10DFDE50F042C43A25528B905B73559B5C94AFA1,
+	DoorController_set_CurrentState_mED5164D84AA548BB5DB9BF851FE7252F06302425,
+	DoorController_get_IsDoorOpen_mED0E43F2137FAC2A1D958EBA93C65BFBC57C2E59,
+	DoorController_get_IsDoorClosed_m8D72CCCE18CCDC51FEF860817274E3E6A83E8287,
+	DoorController_Awake_m41A67CDA59EBE84C1E7540CF44B3AC23D8646810,
+	DoorController_Start_mF030C0AB6F969D4EA6A506E6472E32D79BAE4C5E,
+	DoorController_CloseDoor_m9B2BEC56EAB5EA626A31E20C7001749C50014CBA,
+	DoorController_OpenDoor_mAD7D25AF52286A8143F9C3470ECDEEB748F7900D,
+	DoorController_ToggleDoor_mB8CF6CD38A611CBF095A133AFB9F8585E64E39B6,
+	DoorController_Animate_mF330E38A70AD7554637FE4703D4388D5573C098D,
+	DoorController_GetCurrentAnimation_m7A212994A7997783D313B5F39C347474C49AAD77,
+	DoorController__ctor_m7B71D990849C0F95580BFBA82487CD93B412850A,
+	DoorToggle_Awake_m0D47CE1711163AE3CDE876AD857549C5B3C3E375,
+	DoorToggle_OnMouseDown_mDACA186648D0AD96738A924CB0EAB03AD72A2E5D,
+	DoorToggle__ctor_mA23E454284DE2CDFC5AD29F51C7464E15B2B4377,
 };
-static const int32_t s_InvokerIndices[87] = 
+static const int32_t s_InvokerIndices[102] = 
 {
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5372,
-	5491,
-	4358,
-	5491,
-	5292,
-	5372,
-	5491,
-	5372,
-	5491,
-	5491,
-	5491,
-	5491,
-	4384,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	4384,
-	4384,
-	5491,
-	5491,
-	5372,
-	5491,
-	4358,
-	5491,
-	5292,
-	5372,
-	5491,
-	5372,
-	5491,
-	5491,
-	5491,
-	5491,
-	5372,
-	5491,
-	4358,
-	5491,
-	5292,
-	5372,
-	5491,
-	5372,
-	5491,
-	5491,
-	5491,
-	5372,
-	5372,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	5491,
-	3127,
-	5491,
-	5491,
-	4384,
-	4384,
-	5372,
-	5491,
-	4358,
-	5491,
-	5292,
-	5372,
-	5491,
-	5372,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5373,
+	5492,
+	4359,
+	5492,
+	5293,
+	5373,
+	5492,
+	5373,
+	5492,
+	5492,
+	5492,
+	5492,
+	4385,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	4385,
+	4385,
+	5492,
+	5373,
+	5492,
+	4359,
+	5492,
+	5293,
+	5373,
+	5492,
+	5373,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5373,
+	5492,
+	4359,
+	5492,
+	5293,
+	5373,
+	5492,
+	5373,
+	5492,
+	5492,
+	5492,
+	5373,
+	5373,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	3128,
+	5492,
+	5492,
+	4385,
+	4385,
+	5373,
+	5492,
+	4359,
+	5492,
+	5293,
+	5373,
+	5492,
+	5373,
+	5347,
+	4359,
+	5293,
+	5293,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5492,
+	5373,
+	5492,
+	5492,
+	5492,
+	5492,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	87,
+	102,
 	s_methodPointers,
 	0,
 	NULL,
