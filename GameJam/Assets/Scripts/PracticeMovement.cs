@@ -21,11 +21,16 @@ public class PracticeMovement : MonoBehaviour
 
     private Animator playerAnim;
 
+    //For Coroutine
+    public float countDown;
+
 
     private void Start()
     {
         playerAnim = GetComponent<Animator>();
     }
+
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -36,7 +41,8 @@ public class PracticeMovement : MonoBehaviour
             startPos = Input.touches[0].position;
             fingerDown = true;
 
-
+            playerAnim.SetBool("left", false);
+            playerAnim.SetBool("right", false);
         }
 
         if (fingerDown)
@@ -46,9 +52,8 @@ public class PracticeMovement : MonoBehaviour
 
             if (Input.touches[0].position.x >= startPos.x + pixelDistToDetect || Input.GetKey(KeyCode.RightArrow))
             {
-
-                
-
+                playerAnim.SetBool("right", true);
+                playerAnim.SetBool("left", false);
 
                 fingerDown = false;
                 Debug.Log("Swipe Right");
@@ -57,14 +62,11 @@ public class PracticeMovement : MonoBehaviour
                 {
                     right = true;
                     left = false;
-
-                    playerAnim.SetBool("right", true);
-                    playerAnim.SetBool("left", false);
                 }
 
 
             }
-           
+            
 
 
 
@@ -75,7 +77,8 @@ public class PracticeMovement : MonoBehaviour
             //Left Swipe: Works fine. No need to change
             if (Input.touches[0].position.x <= startPos.x - pixelDistToDetect || Input.GetKey(KeyCode.LeftArrow))
             {
-                
+                playerAnim.SetBool("left", true);
+                playerAnim.SetBool("right", false);
 
                 fingerDown = false;
                 Debug.Log("swipe Left");
@@ -85,28 +88,22 @@ public class PracticeMovement : MonoBehaviour
                     right = false;
                     left = true;
                 }
-
             }
-            
-
-
-
-
-
-
-           
-
-
-
-
-
-
-
         }
+        else
+        {
+            StartCoroutine(StartCounter());
+        }
+        
+       
+
 
         if (fingerDown && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended)
         {
             fingerDown = false;
+
+            playerAnim.SetBool("left", false);
+            playerAnim.SetBool("right", false);
         }
 
 
@@ -128,17 +125,12 @@ public class PracticeMovement : MonoBehaviour
             {
                 right = true;
                 left = false;
-
-                
             }
 
             else if (Input.GetKey(KeyCode.LeftArrow))
             {
                 right = false;
                 left = true;
-
-               
-
             }
         }
 
@@ -150,6 +142,8 @@ public class PracticeMovement : MonoBehaviour
             if(transform.position.x >= 0 && right)
             {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(1.5f, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
+
+                
                 
             }
 
@@ -160,18 +154,19 @@ public class PracticeMovement : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
                 
 
+
                 if (transform.position.x == 0)
                 {
                     right = false;
+                    
                 }
             }
 
-          
-           
             
         }
         
-            
+
+
 
 
 
@@ -182,8 +177,6 @@ public class PracticeMovement : MonoBehaviour
             if (transform.position.x <= 0 && left)
             {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(-1.5f, transform.position.y, transform.position.z), movementSpeed * Time.deltaTime);
-
-                
             }
 
             else if(transform.position.x <= 1.5 && left)
@@ -196,20 +189,31 @@ public class PracticeMovement : MonoBehaviour
                     left = false;
 
                 }
-
-                
             }
-            
-           
-           
         }
-            
+       
 
-       /* else if (transform.position.x == 0)
+    }
+
+
+    //Couroutine function for animation
+
+    private IEnumerator StartCounter()
+    {
+        countDown = 0.25f;
+        for (int i = 0; i < 10000; i++)
         {
-            right = false;
-            left = false;
-        }*/
+            while (countDown >= 0)
+            {
+                //Debug.Log(i++);
+                countDown -= Time.smoothDeltaTime;
+               
+                yield return null;
+            }
+            playerAnim.SetBool("right", false);
+            playerAnim.SetBool("left", false);
+        }
+
     }
 
 }
