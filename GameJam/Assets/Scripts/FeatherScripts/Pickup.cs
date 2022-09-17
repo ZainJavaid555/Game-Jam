@@ -20,35 +20,24 @@ public class Pickup : MonoBehaviour
             Debug.Log("Thief speed is 5.5");
         }
 
-        else if (GetComponent<Points>().points == 50 && tm.thiefSpeed >= 0)
+        else if (GetComponent<Points>().points == 65 && tm.thiefSpeed >= 0)
+        {
+            tm.thiefSpeed = 5.25f;
+            Debug.Log("Thief speed is 5.25");
+        }
+        
+        else if (GetComponent<Points>().points == 100 && tm.thiefSpeed >= 0)
         {
             tm.thiefSpeed = 5.0f;
             Debug.Log("Thief speed is 5.0");
         }
-        
-        else if (GetComponent<Points>().points == 75 && tm.thiefSpeed >= 0)
-        {
-            tm.thiefSpeed = 4.5f;
-            Debug.Log("Thief speed is 4.5");
-        }
-
-        else if (GetComponent<Points>().points == 100 && tm.thiefSpeed >= 0)
-        {
-            tm.thiefSpeed = 4.0f;
-            Debug.Log("Thief speed is 4.0");
-        }
 
         else if (GetComponent<Points>().points == 125 && tm.thiefSpeed >= 0)
         {
-            tm.thiefSpeed = 3.0f;
-            Debug.Log("Thief speed is 3.0");
+            tm.thiefSpeed = 4.75f;
+            Debug.Log("Thief speed is 4.5");
         }
 
-        else if (GetComponent<Points>().points == 150 && tm.thiefSpeed >= 0)
-        {
-            tm.thiefSpeed = 2.0f;
-            Debug.Log("Thief speed is 2.0");
-        }
     }
 
     private void Awake()
