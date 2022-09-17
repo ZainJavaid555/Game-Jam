@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour
 {
 
     ThiefMovement tm;
+    public GameObject script;
     private void Start()
     {
         
@@ -13,16 +14,20 @@ public class Pickup : MonoBehaviour
 
     private void Update()
     {
-        if(GetComponent<Points>().points == 20)
+        if(GetComponent<Points>().points == 20 && tm.thiefSpeed >= 0)
         {
-            tm.thiefSpeed = tm.thiefSpeed - 0.5f;
+            tm.thiefSpeed = tm.thiefSpeed - 0.1f;
             Debug.Log("Thief speed reduced");
+
+            
         }
+
+       
     }
 
     private void Awake()
     {
-        tm = GetComponent<ThiefMovement>();
+        tm = script.GetComponent<ThiefMovement>();
     }
     private void OnTriggerEnter(Collider Col)
     {
