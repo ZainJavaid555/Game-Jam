@@ -14,6 +14,6 @@ public class ThiefMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * thiefSpeed * Time.deltaTime); 
+        transform.Translate(Vector3.forward * thiefSpeed * Time.deltaTime);
     }
 }

@@ -13,7 +13,11 @@ public class Pickup : MonoBehaviour
 
     private void Update()
     {
-        
+        if(GetComponent<Points>().points == 20)
+        {
+            tm.thiefSpeed = tm.thiefSpeed - 0.5f;
+            Debug.Log("Thief speed reduced");
+        }
     }
 
     private void Awake()
@@ -26,8 +30,6 @@ public class Pickup : MonoBehaviour
         if(Col.gameObject.tag == "Feather")
         {
             GetComponent<Points>().points++; // Add 1 Point
-            //Decrease speed of thief by 0.03 for each feather.
-            tm.thiefSpeed = tm.thiefSpeed - 0.0120f; // 50 x 0.02 = 1ms , 50 x 0.0160 = 0.8ms , 50 x 0.012 = 0.6ms
             Col.gameObject.SetActive(false);
         }
     }
