@@ -17,9 +17,9 @@ public class CatchScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(naniPos.transform.position.x == 0 && inTrigger)
+        if (naniPos.transform.position.x == 0 && inTrigger)
         {
             Debug.Log("NANI IS ABOUT TO CATCH");
 
@@ -27,6 +27,15 @@ public class CatchScript : MonoBehaviour
 
             catching = true;
         }
+
+        //if ((naniPos.transform.position.x == -1.5f && inTrigger) || (naniPos.transform.position.x == 1.5 && inTrigger))
+        //{
+        //    Debug.Log("Switching Lanes to Catch");
+
+        //    naniPos.transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        //    plaerAnim.SetBool("catch", true);
+        //    catching = true;
+        //}
     }
 
     private void OnTriggerEnter(Collider Col)
@@ -37,7 +46,8 @@ public class CatchScript : MonoBehaviour
             inTrigger = true;
 
             Debug.Log("Nani has entered catching collider");
-            // perform catch
+
+            
         }
     }
 }

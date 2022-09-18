@@ -37,7 +37,7 @@ public class ThiefMovement : MonoBehaviour
 
     private IEnumerator StartCounter()
     {
-        countDown = 3.0f;
+        countDown = 5.5f;
         for (int i = 0; i < 10000; i++)
         {
             while (countDown >= 0)

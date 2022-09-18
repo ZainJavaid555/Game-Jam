@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CameraStop : MonoBehaviour
 {
     Movement ms;
+    CatchScript cs;
     public GameObject Player;
     public float cameraSpeed;
 
@@ -19,6 +20,7 @@ public class CameraStop : MonoBehaviour
     private void Awake()
     {
         ms = Player.GetComponent<Movement>();
+        cs = Player.GetComponent<CatchScript>();
 
         cameraSpeed = ms.speed;
     }
@@ -34,6 +36,12 @@ public class CameraStop : MonoBehaviour
             StartCoroutine(StartCounter());
         }
 
+        if(cs.catching == true)
+        {
+            Debug.Log("Thief Caught");
+
+            StartCoroutine(StartCounter());
+        }
         
 
         
@@ -58,7 +66,7 @@ public class CameraStop : MonoBehaviour
     //For Delay
     private IEnumerator StartCounter()
     {
-        countDown = 2.0f;
+        countDown = 5.5f;
         for (int i = 0; i < 10000; i++)
         {
             while (countDown >= 0)
