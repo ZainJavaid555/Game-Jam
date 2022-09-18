@@ -2349,7 +2349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7c267968c3aee489cf42fa8d0a570a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thiefSpeed: 5
+  thiefSpeed: 6
   countDown: 0
   script: {fileID: 579132086}
 --- !u!82 &391437998
