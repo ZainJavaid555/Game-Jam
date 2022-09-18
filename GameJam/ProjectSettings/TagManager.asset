@@ -10,6 +10,7 @@ TagManager:
   - Platform
   - Feather
   - Thief
+  - Catch
   layers:
   - Default
   - TransparentFX
