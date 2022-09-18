@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.887905, g: 0.9025782, b: 0.9528169, a: 1}
+  m_IndirectSpecularColor: {r: 0.8892496, g: 0.90340394, b: 0.95343953, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2349,7 +2349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7c267968c3aee489cf42fa8d0a570a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thiefSpeed: 6
+  thiefSpeed: 5
+  script: {fileID: 579132086}
 --- !u!82 &391437998
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4356,6 +4357,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a26f639007cf44c9f8f43a5da518a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inTrigger: 0
+  naniPos: {fileID: 579132086}
+  catching: 0
 --- !u!1001 &601643485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6215,8 +6219,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.9233723, y: 2.438603, z: 2.654062}
-  m_Center: {x: 0.097453594, y: 0.7193011, z: -0.8625473}
+  m_Size: {x: 4.9233723, y: 2.438603, z: 3.6815724}
+  m_Center: {x: 0.097453594, y: 0.7193011, z: -1.3763025}
 --- !u!4 &962506747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7326308086656437384, guid: 81d960fe44e3f6b46bcda7b24988e254, type: 3}

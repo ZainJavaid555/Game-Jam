@@ -49,9 +49,9 @@ public class Pickup : MonoBehaviour
     // testing end game scenerio
     private void FixedUpdate()
     {
-        if (GetComponent<Points>().points == 40 && tm.thiefSpeed >= 0)
+        if (GetComponent<Points>().points == 20 && tm.thiefSpeed >= 0)
         {
-            tm.thiefSpeed = 5.0f;
+            tm.thiefSpeed = 4.5f;
             Debug.Log("Thief speed is 5.0");
         }
 

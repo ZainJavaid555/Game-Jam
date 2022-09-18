@@ -17,7 +17,7 @@ public class PracticeMovement : MonoBehaviour
     private bool fingerDown;
 
 
-    float movementSpeed = 10.0f;
+    //float movementSpeed = 10.0f;
 
     private Animator playerAnim;
 
